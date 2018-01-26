@@ -25,9 +25,11 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    mainw.cpp
+    mainw.cpp \
+    password.cpp
 
 HEADERS += \
-    mainw.h
+    mainw.h \
+    password.h
 
 FORMS +=

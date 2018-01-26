@@ -6,16 +6,15 @@
 #include <QPushButton> // Кнопка
 #include <QHBoxLayout> // Слой(виджеты по горизонтали)
 #include "mainw.h"
-
+#include "password.h"
 int main(int argc, char *argv[])
 {
-        QApplication a(argc, argv);
+    QApplication a(argc, argv);
 
-    mainw *wind  = new mainw();
-    wind->show();
 
-    str1 *msg= new str1;
-    QObject::connect(wind,SIGNAL(strT(QString)),msg,SLOT(strT(QString)));
-    QObject::connect(wind,SIGNAL(invT(QString)),msg,SLOT(invT(QString)));
+    str *msg2 = new str;
+    password *pw  = new password();
+            pw->show();
+    QObject::connect(pw,SIGNAL(getpw(QString)),msg2,SLOT(getpw(QString)));
     return a.exec();
 }
