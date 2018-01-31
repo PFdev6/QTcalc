@@ -14,9 +14,7 @@ password::password(QWidget *parent) : QDialog(parent)
     setLayout(Mid);
     connect(EXIT, SIGNAL(clicked(bool)),this, SLOT(close()));
     connect(OK, SIGNAL(clicked(bool)),this, SLOT(ChekPass()));
-
 };
-
 void password::ChekPass()
 {
     emit getpw(passwordinput->text());

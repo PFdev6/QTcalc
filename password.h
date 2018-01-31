@@ -31,14 +31,15 @@ class str : public QObject
 public slots:
     void getpw(QString string)
     {
-        // password uganda_army
-        QString psswrd = "uganda_army";
+        // password 123
+        QString psswrd = "123";
         if (string == psswrd)
         {
              mainw *wind  = new mainw();
              str1 *msg = new str1;
              QObject::connect(wind,SIGNAL(strT(QString)),msg,SLOT(strT(QString)));
              QObject::connect(wind,SIGNAL(invT(QString)),msg,SLOT(invT(QString)));
+             QObject::connect(wind,SIGNAL(MathConverting(QString)),msg,SLOT(MathConverting(QString)));
              wind->show();
         }
         else
