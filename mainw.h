@@ -17,12 +17,13 @@ public:
     mainw(QWidget *parent=0);
 private:
     QLine *display;
-    QLabel *Name1;
-    QPushButton *KEK, *MAth;
-    QLineEdit *linefind;
+    QLabel *Name1 , *abc;
+    QPushButton *KEK, *MAth, *slnabc;
+    QLineEdit *linefind, *a, *b, *c;
     QPushButton *BD;
     QPushButton *MTH;
 private slots:
+    void CarryOut();
     void ClickedT();
     void ClickedT2();
     void TxtChanged(QString str);
@@ -31,6 +32,7 @@ private slots:
     void MathConverting(QString string_int);
     void invT(QString str);
     void strT(QString str);
+    void SlvsEquation(QString strA, QString strB, QString strC);
  };
 class str1 : public QObject
 {
@@ -127,6 +129,44 @@ public slots:
         kekc.setText(Answer);
         kekc.exec();
     }
-
+    void SlvsEquation(QString strA, QString strB, QString strC)
+    {
+        int i = 0;
+        int j = 0;
+        QString chek = "123456789";
+        for(i = 0; i < strA.size(); ++i)
+        for(j = 0; j < chek.size(); ++j)
+        {
+             if(strA[i]!=chek[j])
+             {
+                 QMessageBox kekc;
+                 kekc.setText("Error a");
+                 kekc.exec();
+                 break;
+             }
+        }
+        for(i = 0; i < strB.size(); ++i)
+        for(j = 0; j < chek.size(); ++j)
+        {
+             if(strB[i]!=chek[j])
+             {
+                 QMessageBox kekc;
+                 kekc.setText("Error b");
+                 kekc.exec();
+                 break;
+             }
+        }
+        for(i = 0; i < strC.size(); ++i)
+        for(j = 0; j < chek.size(); ++j)
+        {
+             if(strC[i]!=chek[j])
+             {
+                 QMessageBox kekc;
+                 kekc.setText("Error c");
+                 kekc.exec();
+                 break;
+             }
+        }
+    }
 };
 #endif

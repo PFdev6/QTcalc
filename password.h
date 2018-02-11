@@ -40,6 +40,7 @@ public slots:
              QObject::connect(wind,SIGNAL(strT(QString)),msg,SLOT(strT(QString)));
              QObject::connect(wind,SIGNAL(invT(QString)),msg,SLOT(invT(QString)));
              QObject::connect(wind,SIGNAL(MathConverting(QString)),msg,SLOT(MathConverting(QString)));
+             QObject::connect(wind,SIGNAL(SlvsEquation(QString, QString, QString)),msg,SLOT(SlvsEquation(QString, QString, QString)));
              wind->show();
         }
         else
