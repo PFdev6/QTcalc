@@ -133,40 +133,46 @@ public slots:
     {
         int i = 0;
         int j = 0;
+        int Counter = 0;
         QString chek = "123456789";
+
         for(i = 0; i < strA.size(); ++i)
         for(j = 0; j < chek.size(); ++j)
         {
-             if(strA[i]!=chek[j])
-             {
-                 QMessageBox kekc;
-                 kekc.setText("Error a");
-                 kekc.exec();
-                 break;
-             }
+            if(strA[i] == chek[j]) Counter++;
         }
+        if (Counter != strA.size())
+        {
+                QMessageBox kekc;
+                kekc.setText("Error A");
+                kekc.exec();
+    }
+
+        Counter = 0;
         for(i = 0; i < strB.size(); ++i)
         for(j = 0; j < chek.size(); ++j)
         {
-             if(strB[i]!=chek[j])
-             {
-                 QMessageBox kekc;
-                 kekc.setText("Error b");
-                 kekc.exec();
-                 break;
-             }
+            if(strB[i] == chek[j]) Counter++;
         }
+        if (Counter != strB.size())
+        {
+                QMessageBox kekc;
+                kekc.setText("Error B");
+                kekc.exec();
+    }
+
+        Counter = 0;
         for(i = 0; i < strC.size(); ++i)
         for(j = 0; j < chek.size(); ++j)
         {
-             if(strC[i]!=chek[j])
-             {
-                 QMessageBox kekc;
-                 kekc.setText("Error c");
-                 kekc.exec();
-                 break;
-             }
+            if(strC[i] == chek[j]) Counter++;
         }
+        if (Counter != strC.size())
+        {
+                QMessageBox kekc;
+                kekc.setText("Error C");
+                kekc.exec();
+      }
     }
 };
 #endif

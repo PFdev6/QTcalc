@@ -9,7 +9,6 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QMessageBox>
-
 class password : public QDialog
 {
   Q_OBJECT
@@ -35,6 +34,7 @@ public slots:
         QString psswrd = "123";
         if (string == psswrd)
         {
+
              mainw *wind  = new mainw();
              str1 *msg = new str1;
              QObject::connect(wind,SIGNAL(strT(QString)),msg,SLOT(strT(QString)));
@@ -42,6 +42,7 @@ public slots:
              QObject::connect(wind,SIGNAL(MathConverting(QString)),msg,SLOT(MathConverting(QString)));
              QObject::connect(wind,SIGNAL(SlvsEquation(QString, QString, QString)),msg,SLOT(SlvsEquation(QString, QString, QString)));
              wind->show();
+
         }
         else
         {
@@ -52,3 +53,4 @@ public slots:
     }
 };
 #endif // PASSWORD_H
+

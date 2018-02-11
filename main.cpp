@@ -13,8 +13,10 @@ int main(int argc, char *argv[])
 
 
     str *msg2 = new str;
-    password *pw  = new password();
+     password *pw  = new password();
             pw->show();
+
     QObject::connect(pw,SIGNAL(getpw(QString)),msg2,SLOT(getpw(QString)));
+
     return a.exec();
 }
