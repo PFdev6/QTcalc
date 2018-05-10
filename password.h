@@ -28,29 +28,26 @@ class str : public QObject
 {
     Q_OBJECT
 public slots:
-    void getpw(QString string)
-    {
-        // password 123
-        QString psswrd = "123";
-        if (string == psswrd)
-        {
-
-             mainw *wind  = new mainw();
-             str1 *msg = new str1;
-             QObject::connect(wind,SIGNAL(strT(QString)),msg,SLOT(strT(QString)));
-             QObject::connect(wind,SIGNAL(invT(QString)),msg,SLOT(invT(QString)));
-             QObject::connect(wind,SIGNAL(MathConverting(QString)),msg,SLOT(MathConverting(QString)));
-             QObject::connect(wind,SIGNAL(SlvsEquation(QString, QString, QString)),msg,SLOT(SlvsEquation(QString, QString, QString)));
-             wind->show();
-
+        void getpw(QString string){
+                QString psswrd = "123";
+                if (string == psswrd)
+                {
+                    mainw *wind  = new mainw();
+                    str1 *msg = new str1;
+                    QObject::connect(wind,SIGNAL(strT(QString)),msg,SLOT(strT(QString)));
+                    QObject::connect(wind,SIGNAL(invT(QString)),msg,SLOT(invT(QString)));
+                    QObject::connect(wind,SIGNAL(MathConverting(QString)),msg,SLOT(MathConverting(QString)));
+                    QObject::connect(wind,SIGNAL(SlvsEquation(QString, QString, QString)),msg,SLOT(SlvsEquation(QString, QString, QString)));
+                    wind->show();
+                    }
+                else
+                {
+                    QMessageBox kek;
+                    kek.setText("ERROR and get out de way");
+                    kek.exec();
+                }
         }
-        else
-        {
-            QMessageBox kek;
-            kek.setText("ERROR and get out de way");
-            kek.exec();
-        }
-    }
+
 };
 #endif // PASSWORD_H
 

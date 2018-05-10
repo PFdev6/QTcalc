@@ -9,6 +9,7 @@
 #include <QVBoxLayout>
 #include <QWidget>
 #include <QMessageBox> 
+#include <math.h>
 class mainw: public QDialog
 {
     Q_OBJECT
@@ -131,10 +132,11 @@ public slots:
     }
     void SlvsEquation(QString strA, QString strB, QString strC)
     {
+        int sA = 0, sB = 0, sC = 0;
         int i = 0;
         int j = 0;
         int Counter = 0;
-        QString chek = "123456789";
+        QString chek = "-123456789";
 
         for(i = 0; i < strA.size(); ++i)
         for(j = 0; j < chek.size(); ++j)
@@ -145,8 +147,11 @@ public slots:
         {
                 QMessageBox kekc;
                 kekc.setText("Error A");
-                kekc.exec();
-    }
+                kekc.exec(); 
+    }else{
+            sA =strA.toInt();
+}
+
 
         Counter = 0;
         for(i = 0; i < strB.size(); ++i)
@@ -159,7 +164,9 @@ public slots:
                 QMessageBox kekc;
                 kekc.setText("Error B");
                 kekc.exec();
-    }
+    }else{
+            sB =strB.toInt();
+}
 
         Counter = 0;
         for(i = 0; i < strC.size(); ++i)
@@ -172,7 +179,28 @@ public slots:
                 QMessageBox kekc;
                 kekc.setText("Error C");
                 kekc.exec();
-      }
+      }else{
+            sC =strC.toInt();
+}
+       int D = sB*sB - 4 *  sA * sC;
+        if(D < 0)
+        {
+            QMessageBox kekc;
+            kekc.setText("D < 0, You have complex 'x' ");
+            kekc.exec();
+        }else
+        {
+            int x1=0, x2=0;
+            x1 = (-1*sB+sqrt(D))/(sA*2);
+            x2 = (-1*sB-sqrt(D))/(sA*2);
+            QString aswr ="X1 = ";
+            aswr+=QString::number(x1);
+            aswr+=" X2 = ";
+            aswr+=QString::number(x2);
+            QMessageBox answer;
+            answer.setText(aswr);
+            answer.exec();
+        }
     }
 };
 #endif

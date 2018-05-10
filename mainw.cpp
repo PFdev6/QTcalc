@@ -2,7 +2,6 @@
 mainw::mainw(QWidget *parent) : QDialog(parent)
 {
             linefind = new QLineEdit;
-
             Name1 = new QLabel("do you know de way");
             QVBoxLayout *Mid = new  QVBoxLayout;
             QHBoxLayout *keflay = new QHBoxLayout;
@@ -50,7 +49,7 @@ mainw::mainw(QWidget *parent) : QDialog(parent)
                 Mid->addLayout(buttonofsln);
                 setLayout(Mid);
 
-                connect(KEK, SIGNAL(clicked(bool)),this, SLOT(close()));
+                connect(KEK, SIGNAL(clicked(bool)),this, SLOT(exec()));
                 connect(BD, SIGNAL(clicked()),this, SLOT(ClickedT()));
                 connect(MTH, SIGNAL(clicked()),this, SLOT(ClickedT2()));
                 connect(MAth, SIGNAL(clicked()),this, SLOT(Math()));
